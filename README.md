@@ -1,4 +1,4 @@
-![Quiz logo](images/readme/Quiz_logo.png | width=50%)
+![Quiz logo](images/readme/Quiz_logo.png) <!-- .element width="50%" -->
 
 # ng2d-quiz-app
 
