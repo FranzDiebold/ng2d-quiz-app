@@ -1,15 +1,15 @@
-![QuizApp Logo](./images/readme/QuizApp_logo.png)
+<img src="../images/readme/Quiz_logo.png" width="15%" style="max-width:100%;" alt="Quiz logo">
 
 # QuizServer
 
 QuizServer is the *stateless* JSON backend of the ng2d-quiz-app using [Google Apps Script](https://developers.google.com/apps-script/).
 All data for quizzes, questions and answers are stored in a Google Sheet and can thus be easily changed, even on a mobile device.
 
-![QuizServer architecture](./images/readme/QuizServer_architecture.png)
+<img src="./images/readme/QuizServer_architecture.png" align="center" width="60%" style="max-width:100%;" alt="QuizServer architecture">
 
 The requirement for the backend is to serve the questions and answers in a *randomized* order, while being stateless at the same time.
 This is achieved by using a random seed:
-The [QuizApp](../quiz-app/README.md) client app generates a random seed on start-up, which is kept constant over the entire client app lifetime. This seed is sent with every request and used for shuffling the questions and answers.
+The [QuizApp](../quiz-app/) client app generates a random seed on start-up, which is kept constant over the entire client app lifetime. This seed is sent with every request and used for shuffling the questions and answers.
 
 
 ## 🎯 API endpoints
@@ -81,12 +81,12 @@ Check a given answer for a specific question in a quiz.
 2. Fill the sheet with your quizzes and questions:
     - The template contains all possible setting options. They are mostly self-explaining, so just try out and have fun 🙃.
     - The first sheet is a short `README`:
-    - ![QuizApp Sheet README](./images/readme/quiz-app-quizzes-README.jpg)
+    - <img src="./images/readme/quiz-app-quizzes-README.jpg" width="60%" style="max-width:100%;" alt="QuizApp Sheet README">
     - You need to provide images for quizzes and may provide images for questions. The best practice for serving these images is to use [Dropbox](https://www.dropbox.com):
         1. Share the image (*"Anyone with the link can view this file."*) and get the link.
         2. Transform the link as follows: `https://www.dropbox.com/s/<IMAGE_ID>/<IMAGE_NAME>` → `https://dl.dropboxusercontent.com/s/<IMAGE_ID>/<IMAGE_NAME>`.
-    - ![QuizApp Sheet quizzes](./images/readme/quiz-app-quizzes-quizzes.jpg)
-    - ![QuizApp Sheet questions](./images/readme/quiz-app-quizzes-questions.jpg)
+    - <img src="./images/readme/quiz-app-quizzes-quizzes.jpg" width="60%" style="max-width:100%;" alt="QuizApp Sheet quizzes">
+    - <img src="./images/readme/quiz-app-quizzes-questions.jpg" width="60%" style="max-width:100%;" alt="QuizApp Sheet questions">
 3. Copy the ID of your new `quiz-app-quizzes` sheet, it is needed in the configuration step later. The ID is part of the URL: `https://docs.google.com/spreadsheets/d/<YOUR_SPREADSHEET_ID>/edit`
 
 
@@ -107,10 +107,10 @@ Check a given answer for a specific question in a quiz.
 ## 🚀 Deployment
 The deployment of the QuizServer works as follows:
 1. Click `Publish`.
-    - ![QuizApp Server deployment 1](./images/readme/quiz-app-server-deploy_1.jpg)
+    - <img src="./images/readme/quiz-app-server-deploy_1.jpg" width="60%" style="max-width:100%;" alt="QuizApp Server deployment 1">
 2. Choose `Deploy as webapp...`.
 3. In the popup make the following settings:
-    - ![QuizApp Server deployment 2](./images/readme/quiz-app-server-deploy_2.jpg)
+    - <img src="./images/readme/quiz-app-server-deploy_2.jpg" width="60%" style="max-width:100%;" alt="QuizApp Server deployment 2">
     - `Execute the app as:` `Me: (<YOUR_GOOGLE_ACCOUNT>)`
     - `Who has access to the app:`: `Anyone, even anonymous`
 4. Click `Deploy`/`Update`. You may have to give permission for the script to access the Google Sheet:
