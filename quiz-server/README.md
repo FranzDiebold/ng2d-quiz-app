@@ -5,7 +5,7 @@
 QuizServer is the *stateless* JSON backend of the ng2d-quiz-app using [Google Apps Script](https://developers.google.com/apps-script/).
 All data for quizzes, questions and answers are stored in a Google Sheet and can thus be easily changed, even on a mobile device.
 
-<img src="./images/readme/QuizServer_architecture.png" align="center" width="60%" style="max-width:100%;" alt="QuizServer architecture">
+<img src="./images/readme/QuizServer_architecture.png" width="60%" style="max-width:100%;" alt="QuizServer architecture">
 
 The requirement for the backend is to serve the questions and answers in a *randomized* order, while being stateless at the same time.
 This is achieved by using a random seed:
