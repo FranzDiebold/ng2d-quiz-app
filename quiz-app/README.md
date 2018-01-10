@@ -1,4 +1,4 @@
-![QuizApp Logo](/images/readme/QuizApp_logo.png)
+![QuizApp Logo](./images/readme/QuizApp_logo.png)
 
 # QuizApp
 
