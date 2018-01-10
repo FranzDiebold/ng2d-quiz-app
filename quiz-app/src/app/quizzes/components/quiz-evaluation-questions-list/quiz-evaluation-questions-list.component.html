@@ -1,0 +1,35 @@
+<div class="has-text-centered">
+  <h2 i18n>Questions</h2>
+</div>
+<div class="columns filter">
+  <div class="column">
+    <div class="buttons has-addons is-centered">
+      <span class="button"
+            [style.background-color]="filterValue === 'all' ? quiz.color : undefined"
+            [style.color]="filterValue === 'all' ? '#ffffff' : undefined"
+            [style.border-color]="filterValue === 'all' ? quiz.color : undefined"
+            (click)="setFilterValue('all')" i18n>all</span>
+      <span class="button"
+            [style.background-color]="filterValue === 'correct' ? quiz.color : undefined"
+            [style.color]="filterValue === 'correct' ? '#ffffff' : undefined"
+            [style.border-color]="filterValue === 'correct' ? quiz.color : undefined"
+            (click)="setFilterValue('correct')" i18n>correct</span>
+      <span class="button"
+            [style.background-color]="filterValue === 'incorrect' ? quiz.color : undefined"
+            [style.color]="filterValue === 'incorrect' ? '#ffffff' : undefined"
+            [style.border-color]="filterValue === 'incorrect' ? quiz.color : undefined"
+            (click)="setFilterValue('incorrect')" i18n>incorrect</span>
+    </div>
+  </div>
+</div>
+<div *ngFor="let question of questions; let i = index" class="question-evaluation">
+  <div class="has-text-centered"
+       *ngIf="filterValue === 'all' || ((filterValue === 'correct') === answersDict[question.id].isCorrect)">
+    <app-question [question]="question"
+                  [questionIndex]="i"
+                  [totalNumberOfQuestions]="totalNumberOfQuestions"
+                  [answer]="answersDict[question.id]"
+                  [isEvaluation]="true">
+    </app-question>
+  </div>
+</div>

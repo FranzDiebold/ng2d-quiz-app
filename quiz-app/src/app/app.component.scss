@@ -1,0 +1,31 @@
+@import '../variables.scss';
+
+.navbar {
+  color: $color-text;
+
+  .navbar-item {
+    color: inherit;
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    &.app-title {
+      font-weight: 300;
+      font-size: 20px;
+
+      svg.app-title-logo {
+        height: 30px;
+        margin-right: 7px;
+      }
+    }
+
+    svg.icon {
+      fill: currentColor;
+    }
+  }
+}
+
+.router-content {
+  overflow: hidden;
+}

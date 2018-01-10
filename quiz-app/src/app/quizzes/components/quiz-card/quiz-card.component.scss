@@ -1,0 +1,45 @@
+@import '../../../../variables.scss';
+
+.quiz-card {
+  margin: 15px;
+  color: #ffffff;
+  cursor: pointer;
+  text-align: center;
+
+  &.done {
+    opacity: 0.6;
+
+    .quiz-infos {
+      opacity: 0.6;
+    }
+  }
+
+  .card-content {
+    padding-top: 1.1rem;
+  }
+
+  .quiz-actions {
+    span.icon {
+      svg {
+        fill: currentColor;
+      }
+    }
+  }
+
+  .quiz-infos {
+    font-weight: 300;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 0.5rem;
+    margin-top: 5rem;
+
+    .quiz-title {
+      font-size: 1.6rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .quiz-subtitle {
+      font-size: 1.1rem;
+    }
+  }
+}

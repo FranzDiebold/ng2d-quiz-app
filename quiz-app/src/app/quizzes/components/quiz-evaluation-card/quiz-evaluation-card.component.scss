@@ -1,0 +1,82 @@
+@import '../../../../variables.scss';
+
+.evaluation-card {
+  margin: 1.5rem 1rem 1rem 1rem;
+  color: #ffffff;
+  text-align: center;
+
+  .card-content {
+    padding-bottom: 1.1rem;
+    padding-top: 9rem;
+  }
+
+  .quiz-infos {
+    font-weight: 300;
+    color: #ffffff;
+    border: 3px solid #ffffff;
+    padding: 0.7rem;
+
+    .quiz-title {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+
+    .quiz-subtitle {
+      font-size: 1.4rem;
+    }
+  }
+
+  .evaluation-percentage {
+    font-size: 3rem;
+    font-weight: 300;
+    margin-top: 2.5rem;
+
+    .percentage {
+      font-size: 5.5rem;
+    }
+
+    .percent-sign {
+      font-size: 3.5rem;
+    }
+  }
+
+  progress.progress {
+    &.evaluation-percentage-bar {
+      height: 2rem;
+      margin-bottom: 1rem;
+      border-radius: 3px;
+
+      &::-webkit-progress-bar {
+        background-color: rgba($color-light-gray, 0.8);
+      }
+
+      &::-webkit-progress-value {
+        background: linear-gradient(to right, $color-correct, lighten($color-correct, 10%));
+      }
+      &::-moz-progress-bar {
+        background: linear-gradient(to right, $color-correct, lighten($color-correct, 10%));
+      }
+      &::-ms-fill {
+        background: linear-gradient(to right, $color-correct, lighten($color-correct, 10%));
+      }
+    }
+  }
+
+  .evaluation-number {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+
+    .number-of-correct-answers {
+      font-size: 3.5rem;
+      font-weight: 100;
+      padding-right: 1rem;
+    }
+  }
+
+  .actions {
+    .button {
+      fill: #ffffff;
+    }
+  }
+}

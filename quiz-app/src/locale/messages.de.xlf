@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="f4d3f295cb1b7fbebeaac5c942d3e9cf93422c21" datatype="html">
+        <source>to quiz selection</source>
+        <target>zur Quiz-Auswahl</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/quizzes/components/quiz-evaluation-card/quiz-evaluation-card.component.ts</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fd6f3ecf871e78a360863d918cc9893ab00a8d78" datatype="html">
+        <source>more info</source>
+        <target>mehr Informationen</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.ts</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="97f92fa6d3fbebbce0daabaa4797ad217a4dde3e" datatype="html">
+        <source>retry</source>
+        <target>erneut versuchen</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/quizzes/containers/quiz-select/quiz-select.component.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f4f98d82287a3bf0d967ad482866b530ff76197c" datatype="html">
+        <source>Question <x id="INTERPOLATION" equiv-text="{{ questionIndex + 1 }}"/> of <x id="INTERPOLATION_1" equiv-text="{{ totalNumberOfQuestions }}"/></source>
+        <target>Frage <x id="INTERPOLATION" equiv-text="{{ questionIndex + 1 }}"/> von <x id="INTERPOLATION_1" equiv-text="{{ totalNumberOfQuestions }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/quizzes/components/question/question.component.ts</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cb404ce7946580ac95258bece0ad46caa0b99f37" datatype="html">
+        <source>Answer</source>
+        <target>Antwort</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/quizzes/components/question/question.component.ts</context>
+          <context context-type="linenumber">116</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ff7b6ecd8d13d609047c5b3b962aebbc7aa07d7a" datatype="html">
+        <source>previous question</source>
+        <target>vorige Frage</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/quizzes/components/question/question.component.ts</context>
+          <context context-type="linenumber">148</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5a4a1a27e520bd432a953d457db0ed05e3a9c629" datatype="html">
+        <source>restart</source>
+        <target>wiederholen</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/quizzes/components/question/question.component.ts</context>
+          <context context-type="linenumber">158</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/quizzes/components/quiz-evaluation-card/quiz-evaluation-card.component.ts</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c98077fe229df56d1df276acd22818bd2885eddc" datatype="html">
+        <source>submit</source>
+        <target>absenden</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/quizzes/components/question/question.component.ts</context>
+          <context context-type="linenumber">170</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1ddebb1d0d71a879587211c80e1fcd9c7f73b57d" datatype="html">
+        <source>next question</source>
+        <target>nächste Frage</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/quizzes/components/question/question.component.ts</context>
+          <context context-type="linenumber">182</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5049f76bdf78f8d12ab0ef7d6ef4daca882001c1" datatype="html">
+        <source>evaluation</source>
+        <target>Auswertung</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/quizzes/components/question/question.component.ts</context>
+          <context context-type="linenumber">192</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/quizzes/components/quiz-card/quiz-card.component.ts</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8f38ad0f2ac90714bdf91f991b77ffbf08979147" datatype="html">
+        <source>start</source>
+        <target>Los!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/quizzes/components/quiz-card/quiz-card.component.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ac92738c50ac18bab774600d8358ff7082b747b8" datatype="html">
+        <source>continue</source>
+        <target>fortsetzen</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/quizzes/components/quiz-card/quiz-card.component.ts</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bb5423aac4573dbfda3ef296bf8a2ac6a3e895e9" datatype="html">
+        <source>correct</source>
+        <target>korrekt</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/quizzes/components/quiz-evaluation-card/quiz-evaluation-card.component.ts</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/quizzes/components/quiz-evaluation-questions-list/quiz-evaluation-questions-list.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c8706cd57d97eb04a61f99e848a9d47d1ccb7d53" datatype="html">
+        <source>Questions</source>
+        <target>Fragen</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/quizzes/components/quiz-evaluation-questions-list/quiz-evaluation-questions-list.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8754c2dbc855d18ee90ffff136caedfd64f71e83" datatype="html">
+        <source>all</source>
+        <target>alle</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/quizzes/components/quiz-evaluation-questions-list/quiz-evaluation-questions-list.component.ts</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="05e9bec63e7967919fa42f8721f20906bba74a0b" datatype="html">
+        <source>incorrect</source>
+        <target>inkorrekt</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/quizzes/components/quiz-evaluation-questions-list/quiz-evaluation-questions-list.component.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

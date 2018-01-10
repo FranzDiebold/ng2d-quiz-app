@@ -1,0 +1,22 @@
+<div class="progress-spinner-container has-text-centered"
+     *ngIf="isLoading$ | async; else showQuestion">
+  <div class="is-inline-block">
+    <span class="loader"></span>
+  </div>
+</div>
+<ng-template #showQuestion>
+  <app-question *ngIf="selectedQuestion$ | async as selectedQuestion"
+    [question]="selectedQuestion"
+    [quiz]="quiz$ | async"
+    [questionIndex]="questionIndex$ | async"
+    [totalNumberOfQuestions]="totalNumberOfQuestions$ | async"
+    [isSubmitting]="isSubmitting$ | async"
+    [answer]="answerForSelectedQuestion$ | async"
+    [submittingError]="submittingError$ | async"
+    (submitAnswer)="submitAnswer$.next($event)"
+    (restartQuiz)="restartQuiz($event)">
+  </app-question>
+</ng-template>
+<div class="error-msg" *ngIf="loadingError$ | async as loadingError">
+  <p>{{ loadingError }}</p>
+</div>

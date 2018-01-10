@@ -1,0 +1,31 @@
+<div class="progress-spinner-container has-text-centered"
+     *ngIf="isLoading$ | async; else showQuizzes">
+  <div class="is-inline-block">
+    <span class="loader is-primary"></span>
+  </div>
+</div>
+<ng-template #showQuizzes>
+  <div class="container quizzes has-text-centered">
+    <div class="columns is-multiline">
+      <app-quiz-card
+        *ngFor="let quiz of quizzes$ | async"
+        [quiz]="quiz"
+        [currentQuestionIndex]="(quizzesAnswerStateDict$ | async)[quiz.id]"
+        class="column is-one-quarter-fullhd is-one-third-widescreen is-one-third-desktop is-half-tablet">
+      </app-quiz-card>
+    </div>
+  </div>
+</ng-template>
+<div class="container has-text-centered"
+     *ngIf="loadingError$ | async as loadingError">
+  <div class="card error-card">
+    <div class="card-content">
+      <div class="error-message">
+        {{ loadingError }}
+      </div>
+      <button class="button" (click)="retryLoading()">
+        <ng-container i18n>retry</ng-container>
+      </button>
+    </div>
+  </div>
+</div>

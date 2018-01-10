@@ -1,0 +1,22 @@
+<section class="columns">
+  <app-quiz-evaluation-card
+    [quiz]="quiz$ | async"
+    [numberOfCorrectlyAnsweredQuestions]="numberOfCorrectlyAnsweredQuestions$ | async"
+    [totalNumberOfQuestions]="totalNumberOfQuestions$ | async"
+    (restartQuiz)="restartQuiz($event)"
+    class="column
+           is-4-fullhd is-offset-4-fullhd
+           is-6-widescreen is-offset-3-widescreen
+           is-8-desktop is-offset-2-desktop
+           is-10-tablet is-offset-1-tablet">
+  </app-quiz-evaluation-card>
+</section>
+
+<section>
+  <app-quiz-evaluation-questions-list
+    [quiz]="quiz$ | async"
+    [questions]="questions$ | async"
+    [answersDict]="answersDict$ | async"
+    [totalNumberOfQuestions]="totalNumberOfQuestions$ | async">
+  </app-quiz-evaluation-questions-list>
+</section>
