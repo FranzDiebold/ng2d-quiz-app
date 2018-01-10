@@ -1,4 +1,4 @@
-<img src="images/readme/Quiz_logo.png" width="50%" style="max-width:100%;" alt="Quiz logo">
+<img src="images/readme/Quiz_logo.png" width="30%" style="max-width:100%;" alt="Quiz logo">
 
 # ng2d-quiz-app
 
