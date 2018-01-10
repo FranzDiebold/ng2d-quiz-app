@@ -1,9 +1,9 @@
-<img src="images/readme/Quiz_logo.png" width="15%" style="max-width:100%;" alt="Quiz logo">
+<img src="../images/readme/Quiz_logo.png" width="15%" style="max-width:100%;" alt="Quiz logo">
 
 # QuizApp
 
-<img src="./images/readme/quiz-app-1.jpg" width="60%" style="max-width:100%;" alt="Screenshot 1">
-<img src="./images/readme/quiz-app-2.jpg" width="60%" style="max-width:100%;" alt="Screenshot 2">
+<img src="./images/readme/quiz-app-1.jpg" width="60%" style="max-width:100%; box-shadow: 0 0 4px #777;" alt="Screenshot 1">
+<img src="./images/readme/quiz-app-2.jpg" width="60%" style="max-width:100%; box-shadow: 0 0 4px #777;" alt="Screenshot 2">
 
 [Angular v5](https://github.com/angular/angular) app using the reactive libraries [@ngrx](https://github.com/ngrx/platform) and the [Bulma](https://bulma.io) CSS framework.
 The quizzes and questions are retrieved from the [QuizServer](../quiz-server/) JSON backend. 
