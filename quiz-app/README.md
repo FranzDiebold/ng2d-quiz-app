@@ -27,7 +27,7 @@ Other packages used:
 
 ## 🎬 Installation
 ```sh
-git clone https://github.com/TODO
+git clone https://github.com/FranzDiebold/ng2d-quiz-app.git
 cd ng2d-quiz-app
 npm install
 ```
@@ -59,7 +59,6 @@ $color-light-gray: #959595;
 $color-correct: #00aa00;
 $color-incorrect: #aa0000;
 ```
-
 
 
 ## 🌍 i18n
