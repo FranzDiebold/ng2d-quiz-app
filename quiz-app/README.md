@@ -86,7 +86,6 @@ Using the german locale (`src/locale/messages.de.xlf`):
 Using the [angular-cli-ghpages](https://github.com/angular-schule/angular-cli-ghpages) package:
 
 Install package:
-
 `npm install -g angular-cli-ghpages`
 
 In `quiz-app` folder, build the Angular client app using your GitHub Pages url as base url:
@@ -97,7 +96,7 @@ In the root folder `ng2d-quiz-app` run the `angular-cli-ghpages` command with th
 
 `angular-cli-ghpages --dir quiz-app/dist`
 
-Your Angular client app should now be available at `https://<USERNAME>.github.io/<REPOSITORY_NAME>/`
+Your Angular client app should now be available at `https://<USERNAME>.github.io/<REPOSITORY_NAME>/`.
 
 
 ## ☑️ TODOs
