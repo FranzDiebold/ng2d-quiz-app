@@ -13,10 +13,10 @@ export class QuizzesService {
   ERROR_MESSAGE = 'Oops, an error occurred 😞';
   private API_PATH = environment.apiEndpoint;
 
-  constructor(private http: HttpClient) {}
+  constructor(private httpClient: HttpClient) {}
 
   getQuizzesAndQuestions(seed: string): Observable<Quiz[]> {
-    return this.http
+    return this.httpClient
       .get<Quiz[]>(`${this.API_PATH}?seed=${seed}`);
   }
 
@@ -25,7 +25,7 @@ export class QuizzesService {
     if (Array.isArray(answer)) {
       answerToSubmit = `[${answerToSubmit}]`;
     }
-    return this.http
+    return this.httpClient
       .get<AnswerResponse>(`${this.API_PATH}?quiz_id=${quizId}&seed=${seed}&question_id=${questionId}&answer=${answerToSubmit}`);
   }
 }
