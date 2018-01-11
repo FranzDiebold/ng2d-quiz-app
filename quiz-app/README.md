@@ -2,6 +2,8 @@
 
 # QuizApp
 
+> Check out the [live demo](https://franzdiebold.github.io/ng2d-quiz-app/)!
+
 <img src="./images/readme/quiz-app-1.jpg" width="60%" style="max-width:100%;" alt="Screenshot 1">
 <img src="./images/readme/quiz-app-2.jpg" width="60%" style="max-width:100%;" alt="Screenshot 2">
 
@@ -79,5 +81,24 @@ Using the german locale (`src/locale/messages.de.xlf`):
 `ng build --locale de --i18n-format xlf --i18n-file src/locale/messages.de.xlf --prod`
 
 
+## Build and deploy for GitHub Pages
+
+Using the [angular-cli-ghpages](https://github.com/angular-schule/angular-cli-ghpages) package:
+
+Install package:
+
+`npm install -g angular-cli-ghpages`
+
+In `quiz-app` folder, build the Angular client app using your GitHub Pages url as base url:
+
+`ng build --prod --base-href "https://<USERNAME>.github.io/<REPOSITORY_NAME>/"`
+
+In the root folder `ng2d-quiz-app` run the `angular-cli-ghpages` command with the `--dir` option pointing to the `dist` folder of the `quiz-app`:
+
+`angular-cli-ghpages --dir quiz-app/dist`
+
+Your Angular client app should now be available at `https://<USERNAME>.github.io/<REPOSITORY_NAME>/`
+
+
 ## ☑️ TODOs
-- Use Bulma v0.6.3 when published (warning messages when building, [Bulma issue #1190](https://github.com/jgthms/bulma/issues/1190)).
+- Use Bulma v0.6.3 when published (warning messages in build process, [Bulma issue #1190](https://github.com/jgthms/bulma/issues/1190)).

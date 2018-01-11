@@ -6,6 +6,8 @@
 
 ng2d-quiz-app is a **quiz app** made with [Angular](https://github.com/angular/angular) (ng) and [Google Drive](https://www.google.com/drive/) (gd).
 
+> Check out the [live demo](https://franzdiebold.github.io/ng2d-quiz-app/)!
+
 
 ## QuizServer
 
