@@ -52,6 +52,7 @@ export const environment = {
   darkTextColor: '#494949',
 };
 ```
+The text color (bright or dark) is chosen automatically depending on the background color luminance.
 
 In `src/variables.scss` you may change the color scheme:
 ```scss
