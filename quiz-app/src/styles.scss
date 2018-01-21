@@ -74,6 +74,11 @@ h6 {
   }
 }
 
+.is-checkradio[type=checkbox] + label,
+.is-checkradio[type=radio] + label {
+  margin: 0;
+}
+
 .is-checkradio[type="radio"][disabled] + label,
 .is-checkradio[type="radio"]:checked[disabled] + label,
 .is-checkradio[type="checkbox"][disabled] + label,
