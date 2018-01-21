@@ -45,9 +45,11 @@ export function quizzesReducer(
           quiz: {
             ...quiz,
             questions: quiz.questions.map((question: Question) => {
+              const color = question.color || ColorService.getRandomColor();
               return {
                 ...question,
-                color: question.color || ColorService.getRandomColor(),
+                color: color,
+                textColor: ColorService.getInvertTextColor(color),
               };
             }),
             color: quiz.color || ColorService.getRandomColor(),

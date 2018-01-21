@@ -36,7 +36,7 @@ npm install
 
 
 ## 🎛 Configuration
-In `src/environments/environment.[prod].ts` you may change the `apiEndpoint` of the corresponding backend and the `colors` used:
+In `src/environments/environment.[prod].ts` you may change the `apiEndpoint` of the corresponding backend, the `colors` used and the text colors `brightTextColor` and `darkTextColor`:
 ```typescript
 export const environment = {
   ...,
@@ -48,6 +48,8 @@ export const environment = {
     '#3BCEAC',
     '#0EAD69',
   ],
+  brightTextColor: '#ffffff',
+  darkTextColor: '#494949',
 };
 ```
 

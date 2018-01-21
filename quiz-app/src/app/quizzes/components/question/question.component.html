@@ -1,7 +1,5 @@
-<div class="columns"
-     [ngClass]="{
-      'full-height': !isEvaluation
-     }"
+<div class="columns question"
+     [ngClass]="{ 'full-height': !isEvaluation }"
      [ngStyle]="{ 'background-color': question.color }">
   <div class="column
               is-4-fullhd is-offset-4-fullhd
@@ -10,6 +8,7 @@
               is-10-tablet is-offset-1-tablet">
     <div
       class="question-card"
+      [ngStyle]="{ 'color': question.textColor }"
       [ngClass]="{
         'correct': (answer && answer.isCorrect),
         'incorrect': (answer && !answer.isCorrect)

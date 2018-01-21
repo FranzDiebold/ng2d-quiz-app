@@ -4,242 +4,246 @@
   min-height: calc(100vh - 2.5rem + 0.75rem);
 }
 
-.question-card {
-  margin: 1rem 0.9rem 0.6rem 0.9rem;
-  padding: 0.9rem;
-  text-align: center;
-  color: #ffffff;
+.question {
+  background-image: linear-gradient(139deg, rgba(0, 0, 0, 0.15), rgba(255, 255, 255, 0.15));
 
-  &.correct {
-  }
+  .question-card {
+    margin: 1rem 0.9rem 0.6rem 0.9rem;
+    padding: 0.9rem;
+    text-align: center;
 
-  &.incorrect {
-  }
+    &.correct {
+    }
 
-  .question-image {
-    margin-bottom: 15px;
+    &.incorrect {
+    }
 
-    img {
-      opacity: 0.75;
+    .question-image {
+      margin-bottom: 15px;
+
+      img {
+        opacity: 0.75;
+        border-radius: 3px;
+      }
+    }
+
+    .question-index {
+      margin-bottom: 0.8rem;
+
+      .tag:not(body) {
+        border: 1px solid currentColor;
+        background-color: transparent;
+        color: currentColor;
+      }
+    }
+
+    h2.question-text {
+      font-weight: 300;
+      font-size: 2.0rem;
+      padding-bottom: 0.6rem;
+    }
+
+    i.question-note {
+      opacity: 0.7;
+      padding-bottom: 0.4rem;
+    }
+
+    .answer-group {
+      margin-top: 1.1rem;
+      margin-bottom: 0.6rem;
+      display: inline-flex;
+      flex-direction: column;
+    }
+
+    $answer-padding: 1rem;
+    $answer-evaluation-border-width: 0.3rem;
+    .answer {
+      margin: 0.9rem;
       border-radius: 3px;
-    }
-  }
+      font-size: 18px;
+      background-color: #ffffff;
+      color: $color-text;
+      border-left: $answer-evaluation-border-width solid #ffffff;
 
-  .question-index {
-    margin-bottom: 0.8rem;
-
-    .tag:not(body) {
-      border: 1px solid currentColor;
-      background-color: transparent;
-      color: currentColor;
-    }
-  }
-
-  h2.question-text {
-    font-weight: 300;
-    font-size: 2.0rem;
-    padding-bottom: 0.6rem;
-  }
-
-  i.question-note {
-    color: rgba(255, 255, 255, 0.65);
-    padding-bottom: 0.4rem;
-  }
-
-  .answer-group {
-    margin-top: 1.1rem;
-    margin-bottom: 0.6rem;
-    display: inline-flex;
-    flex-direction: column;
-  }
-
-  $answer-padding: 1rem;
-  $answer-evaluation-border-width: 0.3rem;
-  .answer {
-    margin: 0.9rem;
-    border-radius: 3px;
-    font-size: 18px;
-    background-color: #ffffff;
-    color: $color-text;
-    border-left: $answer-evaluation-border-width solid #ffffff;
-
-    &.sortable {
-      cursor: move;
-    }
-
-    .is-checkradio[type="radio"] + label,
-    .is-checkradio[type="checkbox"] + label {
-      display: inline-block;
-      padding-left: 2rem + $answer-padding + $answer-evaluation-border-width;
-      padding-top: $answer-padding;
-      padding-bottom: $answer-padding;
-      padding-right: 1.5rem;
-      width: stretch;
-      margin-right: 0;
-      margin-left: -1*$answer-evaluation-border-width;
-
-      span {
-        color: $color-text;
+      &.sortable {
+        cursor: move;
       }
-    }
 
-    .is-checkradio[type="radio"] + label::before {
-      margin-top: $answer-padding;
-      margin-left: 0.8*$answer-padding + $answer-evaluation-border-width;
-    }
-
-    .is-checkradio[type="radio"] + label::after {
-      background-color: currentColor;
-      margin-top: $answer-padding;
-      margin-left: 0.8*$answer-padding + $answer-evaluation-border-width;
-    }
-
-    .is-checkradio[type="checkbox"] + label::before {
-      margin-top: $answer-padding - 0.1rem;
-      margin-left: 0.8*$answer-padding + $answer-evaluation-border-width;
-    }
-
-    .is-checkradio[type="checkbox"] + label::after {
-      border-color: currentColor;
-      margin-top: $answer-padding - 0.2rem;
-      margin-left: 0.8*$answer-padding + $answer-evaluation-border-width;
-    }
-
-    .is-checkradio[type="radio"]:hover:not([disabled]) + label::before,
-    .is-checkradio[type="checkbox"]:hover:not([disabled]) + label::before {
-      border-color: currentColor !important;
-    }
-
-    &.field {
-      margin-bottom: 2.3rem;
-
-      .input {
+      .is-checkradio[type="radio"] + label,
+      .is-checkradio[type="checkbox"] + label {
+        display: inline-block;
+        padding-left: 2rem + $answer-padding + $answer-evaluation-border-width;
+        padding-top: $answer-padding;
+        padding-bottom: $answer-padding;
+        padding-right: 1.5rem;
+        width: stretch;
+        margin-right: 0;
         margin-left: -1*$answer-evaluation-border-width;
-      }
-    }
 
-    &.answered {
-      border-color: $color-gray;
-
-      .is-checkradio[type="radio"]:checked + label::before,
-      .is-checkradio[type="checkbox"]:checked + label::before {
-        border-color: $color-gray;
+        span {
+          color: $color-text;
+        }
       }
 
-      .is-checkradio[type="radio"] + label::after {
-        background-color: $color-gray;
-      }
-
-      .is-checkradio[type="checkbox"] + label::after {
-        border-color: $color-gray;
-      }
-    }
-
-    &.answered-correctly {
-      border-color: $color-correct;
-
-      .is-checkradio[type="radio"]:checked + label::before,
-      .is-checkradio[type="checkbox"]:checked + label::before {
-        border-color: $color-correct;
-      }
-
-      .is-checkradio[type="checkbox"] + label::after {
-        border-color: $color-correct;
+      .is-checkradio[type="radio"] + label::before {
+        margin-top: $answer-padding;
+        margin-left: 0.8*$answer-padding + $answer-evaluation-border-width;
       }
 
       .is-checkradio[type="radio"] + label::after {
-        background-color: $color-correct;
+        background-color: currentColor;
+        margin-top: $answer-padding;
+        margin-left: 0.8*$answer-padding + $answer-evaluation-border-width;
       }
 
-      .icon {
-        fill: $color-correct;
-      }
-    }
-    &.answered-incorrectly {
-      border-color: $color-incorrect;
-
-      .is-checkradio[type="radio"] + label::before,
       .is-checkradio[type="checkbox"] + label::before {
-        border-color: $color-incorrect;
+        margin-top: $answer-padding - 0.1rem;
+        margin-left: 0.8*$answer-padding + $answer-evaluation-border-width;
       }
 
-      .icon {
-        fill: $color-incorrect;
+      .is-checkradio[type="checkbox"] + label::after {
+        border-color: currentColor;
+        margin-top: $answer-padding - 0.2rem;
+        margin-left: 0.8*$answer-padding + $answer-evaluation-border-width;
       }
-    }
-  }
 
-  .sort-answers {
-    -webkit-tap-highlight-color: transparent;
-  }
+      .is-checkradio[type="radio"]:hover:not([disabled]) + label::before,
+      .is-checkradio[type="checkbox"]:hover:not([disabled]) + label::before {
+        border-color: currentColor !important;
+      }
 
-  .sort-answer {
-    position: relative;
-    padding: $answer-padding (1.2 * $answer-padding);
+      &.field {
+        margin-bottom: 2.3rem;
 
-    .sort-icon {
-      position: absolute;
-      left: 15px;
-      margin-top: 2px;
-      fill: currentColor;
-    }
+        .input {
+          margin-left: -1*$answer-evaluation-border-width;
+        }
+      }
 
-    .sort-text {
-      display: block;
-      text-align: justify;
-      padding-left: 1.9rem;
-      padding-right: 1rem;
-    }
-  }
+      &.answered {
+        border-color: $color-gray;
 
-  .sortable-ghost {
-    opacity: 0;
-  }
+        .is-checkradio[type="radio"]:checked + label::before,
+        .is-checkradio[type="checkbox"]:checked + label::before {
+          border-color: $color-gray;
+        }
 
-  .answer-text {
-    padding: 1rem 2rem;
-    font-weight: 300;
-    min-width: 8rem;
+        .is-checkradio[type="radio"] + label::after {
+          background-color: $color-gray;
+        }
 
-    .correct-answer-text {
-      color: $color-correct;
-      font-size: 2.3rem;
-    }
-
-    .given-answer-text {
-      font-size: 1.3rem;
-      margin-top: 1rem;
-      margin-bottom: 0.2rem;
+        .is-checkradio[type="checkbox"] + label::after {
+          border-color: $color-gray;
+        }
+      }
 
       &.answered-correctly {
-        color: $color-correct;
-      }
+        border-color: $color-correct;
 
+        .is-checkradio[type="radio"]:checked + label::before,
+        .is-checkradio[type="checkbox"]:checked + label::before {
+          border-color: $color-correct;
+        }
+
+        .is-checkradio[type="checkbox"] + label::after {
+          border-color: $color-correct;
+        }
+
+        .is-checkradio[type="radio"] + label::after {
+          background-color: $color-correct;
+        }
+
+        .icon {
+          fill: $color-correct;
+        }
+      }
       &.answered-incorrectly {
-        color: $color-incorrect;
-        text-decoration: line-through;
+        border-color: $color-incorrect;
+
+        .is-checkradio[type="radio"] + label::before,
+        .is-checkradio[type="checkbox"] + label::before {
+          border-color: $color-incorrect;
+        }
+
+        .icon {
+          fill: $color-incorrect;
+        }
       }
     }
-  }
 
-  .answer-description {
-    padding: 1rem 1.5rem;
-    margin: 1.7rem 0.9rem 0.9rem 0.9rem;
-    background-color: rgba(255, 255, 255, 0.15);
-    font-size: 16px;
-    border-radius: 3px;
-    text-align: justify;
-  }
-
-  .actions {
-    margin-top: 0;
-
-    .column {
-      padding-bottom: 0;
+    .sort-answers {
+      -webkit-tap-highlight-color: transparent;
     }
 
-    .button {
-      fill: #ffffff;
+    .sort-answer {
+      position: relative;
+      padding: $answer-padding (1.2 * $answer-padding);
+
+      .sort-icon {
+        position: absolute;
+        left: 15px;
+        margin-top: 2px;
+        fill: currentColor;
+      }
+
+      .sort-text {
+        display: block;
+        text-align: justify;
+        padding-left: 1.9rem;
+        padding-right: 1rem;
+      }
+    }
+
+    .sortable-ghost {
+      opacity: 0;
+    }
+
+    .answer-text {
+      padding: 1rem 2rem;
+      font-weight: 300;
+      min-width: 8rem;
+
+      .correct-answer-text {
+        color: $color-correct;
+        font-size: 2.3rem;
+      }
+
+      .given-answer-text {
+        font-size: 1.3rem;
+        margin-top: 1rem;
+        margin-bottom: 0.2rem;
+
+        &.answered-correctly {
+          color: $color-correct;
+        }
+
+        &.answered-incorrectly {
+          color: $color-incorrect;
+          text-decoration: line-through;
+        }
+      }
+    }
+
+    .answer-description {
+      padding: 1rem 1.5rem;
+      margin: 1.7rem 0.9rem 0.9rem 0.9rem;
+      background-color: rgba(255, 255, 255, 0.15);
+      font-size: 16px;
+      border-radius: 3px;
+      text-align: justify;
+    }
+
+    .actions {
+      margin-top: 0;
+
+      .column {
+        padding-bottom: 0;
+      }
+
+      .button {
+        color: inherit;
+        fill: currentColor;
+      }
     }
   }
 }

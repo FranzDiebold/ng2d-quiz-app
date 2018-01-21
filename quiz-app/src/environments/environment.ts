@@ -13,4 +13,6 @@ export const environment = {
     '#3BCEAC',
     '#0EAD69',
   ],
+  brightTextColor: '#ffffff',
+  darkTextColor: '#494949',
 };
