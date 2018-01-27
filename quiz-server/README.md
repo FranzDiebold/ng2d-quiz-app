@@ -9,10 +9,10 @@ All data for quizzes, questions and answers are stored in a Google Sheet and can
 
 The requirement for the backend is to serve the questions and answers in a *randomized* order, while being stateless at the same time.
 This is achieved by using a random seed:
-The [QuizApp](../quiz-app/) client app generates a random seed on start-up, which is kept constant over the entire client app lifetime. This seed is sent with every request and used for shuffling the questions and answers.
+The [QuizApp](../quiz-app) client app generates a random seed on start-up, which is kept constant over the entire client app lifetime. This seed is sent with every request and used for shuffling the questions and answers.
 
 
-## 🎯 API endpoints
+## :dart: API endpoints
 
 #### getQuizzesAndQuestions
 Retrieve all existing and active quizzes with their corresponding questions and answers.
@@ -72,7 +72,7 @@ Check a given answer for a specific question in a quiz.
 ```
 
 
-## ☑️ Sheet Preparation
+## :ballot_box_with_check: Sheet Preparation
 1. Get the `quiz-app-quizzes` Google Sheet template:
     1. Log in to your Google account.
     2. Open the [quiz-app-quizzes](https://docs.google.com/spreadsheets/d/1p7T1wYg6_8ym0JypyryvCsXt7CngNT-Tzyu_RNZ-K0g/edit?usp=sharing) Google Sheet template.
@@ -90,7 +90,7 @@ Check a given answer for a specific question in a quiz.
 3. Copy the ID of your new `quiz-app-quizzes` sheet, it is needed in the configuration step later. The ID is part of the URL: `https://docs.google.com/spreadsheets/d/<YOUR_SPREADSHEET_ID>/edit`
 
 
-## 🎬 Script Installation
+## :clapper: Script Installation
 1. Get the `quiz-app-server` `Google Script` (`.gs`) code 🤓:
     1. Log in to your Google Account.
     2. Open the [quiz-app-server](https://script.google.com/d/1aw4MUReEM5EigvdJ7a7oOhvUnHU91UAkoLr-bxRbY66JeDci1iXJQSZO/edit?usp=sharing) Google Apps Script project template.
@@ -104,7 +104,7 @@ Check a given answer for a specific question in a quiz.
     ```
 
 
-## 🚀 Deployment
+## :rocket: Deployment
 The deployment of the QuizServer works as follows:
 1. Click `Publish`.
     - <img src="./images/readme/quiz-app-server-deploy_1.jpg" width="60%" style="max-width:100%;" alt="QuizApp Server deployment 1">

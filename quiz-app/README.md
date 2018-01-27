@@ -8,7 +8,7 @@
 <img src="./images/readme/quiz-app-2.jpg" width="60%" style="max-width:100%;" alt="Screenshot 2">
 
 [Angular v5](https://github.com/angular/angular) app using the reactive libraries [@ngrx](https://github.com/ngrx/platform) and the [Bulma](https://bulma.io) CSS framework.
-The quizzes and questions are retrieved from the [QuizServer](../quiz-server/) JSON backend. 
+The quizzes and questions are retrieved from the [QuizServer](../quiz-server) JSON backend. 
 
 Angular concepts/techniques used:
 - [Reactive Forms](https://angular.io/guide/reactive-forms)
@@ -66,7 +66,7 @@ $color-incorrect: #aa0000;
 ```
 
 
-## 🌍 i18n
+## :earth_africa: i18n
 If you want to add a new language, i.e. french:
 
 1. Run `ng xi18n`.
@@ -74,7 +74,7 @@ If you want to add a new language, i.e. french:
 3. Serve for test: `ng serve --aot --locale fr --i18n-format xlf --i18n-file src/locale/messages.fr.xlf`
 
 
-## 🚀 Build
+## :rocket: Build
 Build for production:
 
 `ng build --prod`
@@ -102,5 +102,5 @@ In the root folder `ng2d-quiz-app` run the `angular-cli-ghpages` command with th
 Your Angular client app should now be available at `https://<USERNAME>.github.io/<REPOSITORY_NAME>/`.
 
 
-## ☑️ TODOs
+## :ballot_box_with_check:️ TODOs
 - [ ] Use Bulma v0.6.3 when published (warning messages in build process, [Bulma issue #1190](https://github.com/jgthms/bulma/issues/1190)).
