@@ -2,6 +2,10 @@
 
 # QuizApp
 
+[![Angular: v5](https://img.shields.io/badge/Angular-v5-DD0031.svg)](./package.json)
+<a href="https://franzdiebold.github.io/ng2d-quiz-app/" target="_blank"><img src="https://img.shields.io/badge/demo-online-3BCEAC.svg" alt="demo: online"></a>
+[![license: MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg)](./LICENSE.md)
+
 > Check out the [live demo](https://franzdiebold.github.io/ng2d-quiz-app/)!
 
 <img src="./images/readme/quiz-app-1.jpg" width="60%" style="max-width:100%;" alt="Screenshot 1">
