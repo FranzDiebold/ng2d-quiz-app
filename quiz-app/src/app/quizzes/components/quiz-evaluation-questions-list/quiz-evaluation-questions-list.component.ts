@@ -14,7 +14,7 @@ import { AnswerModel } from '../../models/answer.model';
 export class QuizEvaluationQuestionsListComponent {
   @Input() quiz: Quiz;
   @Input() questions: Question[];
-  @Input() answersDict: Dictionary<AnswerModel>;
+  @Input() answersDict: any;
   @Input() totalNumberOfQuestions: number;
 
   filterValue: string;
