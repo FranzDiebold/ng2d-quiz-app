@@ -101,7 +101,7 @@ In `quiz-app` folder, build the Angular client app using your GitHub Pages url a
 
 In the root folder `ng2d-quiz-app` run the `angular-cli-ghpages` command with the `--dir` option pointing to the `dist` folder of the `quiz-app`:
 
-`angular-cli-ghpages --dir quiz-app/dist`
+`angular-cli-ghpages --dir quiz-app/dist --no-silent`
 
 Your Angular client app should now be available at `https://<USERNAME>.github.io/<REPOSITORY_NAME>/`.
 
