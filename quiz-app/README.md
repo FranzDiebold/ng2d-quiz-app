@@ -107,4 +107,4 @@ Your Angular client app should now be available at `https://<USERNAME>.github.io
 
 
 ## :ballot_box_with_check: TODOs
-- [ ] Use Bulma v0.6.3 when published (warning messages in build process, [Bulma issue #1190](https://github.com/jgthms/bulma/issues/1190)).
+- [ ] Add social sharing
