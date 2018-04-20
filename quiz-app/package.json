@@ -28,7 +28,7 @@
     "@ngrx/store-devtools": "^5.2.0",
     "angular-sortablejs": "^2.5.2",
     "angular2-uuid": "^1.1.1",
-    "bulma": "^0.7.0",
+    "bulma": "^0.7.1",
     "bulma-checkradio": "1.0.1",
     "bulma-tooltip": "1.0.4",
     "core-js": "^2.5.5",
