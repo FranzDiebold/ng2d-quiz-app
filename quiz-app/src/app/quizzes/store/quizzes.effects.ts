@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Params, RouterStateSnapshot } from '@angular/router';
 
-import { Observable } from 'rxjs/Observable';
+import { Observable, of } from 'rxjs';
 import { switchMap, map, catchError, filter, distinctUntilChanged } from 'rxjs/operators';
-import { of } from 'rxjs/observable/of';
 
 import { Action } from '@ngrx/store';
 import { Actions, Effect } from '@ngrx/effects';

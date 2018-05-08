@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Dictionary } from '@ngrx/entity/src/models';
 
 import { Quiz } from '../../models/quiz.model';

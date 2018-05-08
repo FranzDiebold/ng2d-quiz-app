@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { createFeatureSelector, createSelector, Store } from '@ngrx/store';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { combineLatest, filter, take, map } from 'rxjs/operators';
 import { Dictionary } from '@ngrx/entity/src/models';
 

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
+import { Observable, Subject } from 'rxjs';
 import { combineLatest, filter, throttleTime, switchMap } from 'rxjs/operators';
 import { Dictionary } from '@ngrx/entity/src/models';
 
