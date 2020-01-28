@@ -33,7 +33,7 @@ export class QuestionComponent implements OnChanges {
   constructor(private formBuilder: FormBuilder, private router: Router) {}
 
   ngOnChanges(changes: {[propKey: string]: SimpleChange}): void {
-    if (changes['question']) {
+    if (changes.question) {
       switch (this.question.type) {
         case 'SINGLE_CHOICE':
           this.answerForm = this.formBuilder.group({
@@ -45,7 +45,7 @@ export class QuestionComponent implements OnChanges {
             control.value.reduce(
               (valid: boolean, currentValue: boolean) => valid || currentValue
               , false
-            ) ? null : {'answers': 'At least one answer needs to be checked!'};
+            ) ? null : {answers: 'At least one answer needs to be checked!'};
           this.answerForm = this.formBuilder.group({
             answers: this.formBuilder.array(this.question.shuffledAnswers
                 .map((answer: string) => this.formBuilder.control(false)),
@@ -95,7 +95,7 @@ export class QuestionComponent implements OnChanges {
     const submitAnswer: SubmitAnswerModel = {
       quizId: this.quiz.id,
       questionId: this.question.id,
-      answer: answer,
+      answer,
     };
     this.submitAnswer.emit(submitAnswer);
   }

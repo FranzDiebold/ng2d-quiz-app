@@ -52,7 +52,7 @@ export class QuizComponent implements OnInit {
         combineLatest(
           this.quizzesStoreService.getSeed(),
           (submitAnswer: SubmitAnswerModel, seed: string) =>
-            Object.assign(submitAnswer, { seed: seed })
+            Object.assign(submitAnswer, { seed })
         )
       )
       .subscribe((submitAnswerPayload: SubmitAnswerPayload) =>

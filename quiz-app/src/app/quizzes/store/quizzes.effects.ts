@@ -5,7 +5,7 @@ import { Observable, of } from 'rxjs';
 import { switchMap, map, catchError, filter, distinctUntilChanged } from 'rxjs/operators';
 
 import { Action } from '@ngrx/store';
-import { Actions, Effect } from '@ngrx/effects';
+import { Actions, Effect, ofType } from '@ngrx/effects';
 import { ROUTER_NAVIGATION, RouterNavigationAction, RouterNavigationPayload } from '@ngrx/router-store';
 
 import {
@@ -26,8 +26,8 @@ import { Quiz } from '../models/quiz.model';
 export class QuestionAnswerEffects {
   @Effect()
   loadQuizzesAndQuestions$: Observable<Action> = this.actions$
-    .ofType(QuizAndQuestionsActions.LOAD_QUIZZES_AND_QUESTIONS_LIST)
     .pipe(
+      ofType(QuizAndQuestionsActions.LOAD_QUIZZES_AND_QUESTIONS_LIST),
       map((action: LoadQuizzesAndQuestionsListAction) => action.payload),
       switchMap((seed: string) =>
         this.quizzesService
@@ -41,8 +41,8 @@ export class QuestionAnswerEffects {
 
   @Effect()
   submitAnswer$: Observable<Action> = this.actions$
-    .ofType(AnswerActions.SUBMIT_ANSWER)
     .pipe(
+      ofType(AnswerActions.SUBMIT_ANSWER),
       map((action: SubmitAnswerAction) => action.payload),
       switchMap((submitAnswerPayload: SubmitAnswerPayload) =>
         this.quizzesService
@@ -67,8 +67,8 @@ export class QuestionAnswerEffects {
     );
 
   routerNavigationUpdate$: Observable<Params> = this.actions$
-    .ofType(ROUTER_NAVIGATION)
     .pipe(
+      ofType(ROUTER_NAVIGATION),
       map((action: RouterNavigationAction) => action.payload),
       map((routerNavigationPayload: RouterNavigationPayload<RouterStateSnapshot>) => routerNavigationPayload.routerState),
       map((routerState: RouterStateSnapshot) => routerState.root.firstChild),
@@ -84,11 +84,11 @@ export class QuestionAnswerEffects {
     .pipe(
       distinctUntilChanged(),
       map((params: Params) => {
-        const quizId = params['quiz_id'];
-        const questionIndex = parseInt(params['question_index'], 10) || undefined;
+        const quizId = params.quiz_id;
+        const questionIndex = parseInt(params.question_index, 10) || undefined;
         return {
-          quizId: quizId,
-          questionIndex: questionIndex,
+          quizId,
+          questionIndex,
         };
       }),
       map((quizAndQuestionParams: any) => new SetSelectedQuestionIndexAction({

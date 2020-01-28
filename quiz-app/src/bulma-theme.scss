@@ -11,15 +11,15 @@ $family-primary: $family-sans-serif;
 @import "~bulma/sass/base/_all";
 @import "~bulma/sass/elements/button";
 @import "~bulma/sass/elements/container";
-@import "~bulma/sass/elements/form";
 @import "~bulma/sass/elements/icon";
 @import "~bulma/sass/elements/image";
 @import "~bulma/sass/elements/other";
 @import "~bulma/sass/elements/progress";
 @import "~bulma/sass/elements/tag";
+@import "~bulma/sass/form/_all";
 @import "~bulma/sass/components/card";
 @import "~bulma/sass/components/navbar";
 @import "~bulma/sass/grid/columns";
 
-@import "~bulma-checkradio/dist/bulma-checkradio";
-@import "~bulma-tooltip/dist/bulma-tooltip";
+@import "~bulma-checkradio/dist/css/bulma-checkradio";
+@import "~bulma-tooltip/src/sass/index";

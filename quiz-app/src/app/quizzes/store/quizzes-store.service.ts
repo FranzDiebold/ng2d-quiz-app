@@ -53,8 +53,8 @@ export class QuizzesStoreService extends StoreService {
           this.getQuizzesIsLoading(),
           (quizzesIsLoaded: boolean, quizzesIsLoading: boolean) => {
             return {
-              quizzesIsLoaded: quizzesIsLoaded,
-              quizzesIsLoading: quizzesIsLoading,
+              quizzesIsLoaded,
+              quizzesIsLoading,
             };
           }
         ),

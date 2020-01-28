@@ -16,7 +16,7 @@ export class AllQuestionsAnsweredGuard implements CanActivate {
   ) {}
 
   canActivate(route: ActivatedRouteSnapshot): Observable<boolean> {
-    const quizId = route.params['quiz_id'];
+    const quizId = route.params.quiz_id;
 
     return this.quizzesStoreService.getQuizzesAnswerStateDict().pipe(
         map((quizzesAnswerStateDict: Dictionary<number>) => quizzesAnswerStateDict[quizId]),

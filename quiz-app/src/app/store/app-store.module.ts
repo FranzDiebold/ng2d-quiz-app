@@ -27,7 +27,7 @@ const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
       {metaReducers}
     ),
     EffectsModule.forRoot([]),
-    StoreRouterConnectingModule,
+    StoreRouterConnectingModule.forRoot(),
     !environment.production ? StoreDevtoolsModule.instrument({ maxAge: 10 }) : []
   ],
 })

@@ -2,7 +2,7 @@
 
 # QuizApp
 
-[![Angular: v6](https://img.shields.io/badge/Angular-v6-DD0031.svg)](./package.json)
+[![Angular: v8](https://img.shields.io/badge/Angular-v8-DD0031.svg)](./package.json)
 <a href="https://franzdiebold.github.io/ng2d-quiz-app/" target="_blank"><img src="https://img.shields.io/badge/demo-online-3BCEAC.svg" alt="demo: online"></a>
 [![license: MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg)](./LICENSE.md)
 
@@ -11,7 +11,7 @@
 <img src="./images/readme/quiz-app-1.jpg" width="60%" style="max-width:100%;" alt="Screenshot 1">
 <img src="./images/readme/quiz-app-2.jpg" width="60%" style="max-width:100%;" alt="Screenshot 2">
 
-[Angular v6](https://github.com/angular/angular) app using the reactive libraries [@ngrx](https://github.com/ngrx/platform) and the [Bulma](https://bulma.io) CSS framework.
+[Angular v8](https://github.com/angular/angular) app using the reactive libraries [@ngrx](https://github.com/ngrx/platform) and the [Bulma](https://bulma.io) CSS framework.
 The quizzes and questions are retrieved from the [QuizServer](../quiz-server) JSON backend. 
 
 Angular concepts/techniques used:
@@ -28,7 +28,7 @@ Angular concepts/techniques used:
 
 Other packages used:
 - [angular2-uuid](https://github.com/wulfsolter/angular2-uuid) for generating UUIDs
-- [angular-sortablejs](https://github.com/SortableJS/angular-sortablejs) for reorderable drag-and-drop lists
+- [ngx-sortablejs](https://github.com/sortablejs/ngx-sortablejs) for reorderable drag-and-drop lists
 
 
 ## 🎬 Installation
@@ -107,5 +107,4 @@ Your Angular client app should now be available at `https://<USERNAME>.github.io
 
 
 ## :ballot_box_with_check: TODOs
-- [ ] Update @ngrx when out of beta (v6)
 - [ ] Add social sharing

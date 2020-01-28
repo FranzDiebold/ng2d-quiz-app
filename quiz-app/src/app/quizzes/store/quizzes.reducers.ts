@@ -40,7 +40,7 @@ export function quizzesReducer(
         }
       };
     case QuizAndQuestionsActions.LOAD_QUIZZES_AND_QUESTIONS_LIST_SUCCEEDED:
-      const entities = (<Quiz[]> action.payload).reduce((entitiesMap: Dictionary<QuizState>, quiz: Quiz) => {
+      const entities = (action.payload as Quiz[]).reduce((entitiesMap: Dictionary<QuizState>, quiz: Quiz) => {
         entitiesMap[quiz.id] = {
           quiz: {
             ...quiz,
@@ -48,7 +48,7 @@ export function quizzesReducer(
               const color = question.color || ColorService.getRandomColor();
               return {
                 ...question,
-                color: color,
+                color,
                 textColor: ColorService.getInvertTextColor(color),
               };
             }),
@@ -58,7 +58,7 @@ export function quizzesReducer(
         };
         return entitiesMap;
       }, {});
-      const ids = (<Quiz[]>action.payload).map((quiz: Quiz) => quiz.id);
+      const ids = (action.payload as Quiz[]).map((quiz: Quiz) => quiz.id);
 
       return {
         ...state,
@@ -66,8 +66,8 @@ export function quizzesReducer(
           ...state.quizzes,
           isLoaded: true,
           isLoading: false,
-          ids: ids,
-          entities: entities,
+          ids,
+          entities,
           loadingError: undefined,
         },
       };
