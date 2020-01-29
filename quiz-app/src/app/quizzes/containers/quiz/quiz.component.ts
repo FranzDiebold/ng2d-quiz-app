@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Observable, Subject } from 'rxjs';
-import { combineLatest, filter, throttleTime, switchMap } from 'rxjs/operators';
+import { Observable, Subject, combineLatest } from 'rxjs';
+import { map, filter, throttleTime, switchMap } from 'rxjs/operators';
 import { Dictionary } from '@ngrx/entity/src/models';
 
 import { Quiz } from '../../models/quiz.model';
@@ -48,12 +48,15 @@ export class QuizComponent implements OnInit {
     this.answerForSelectedQuestion$ = this.quizzesStoreService.getSelectedQuizAnswerForSelectedQuestion();
     this.submittingError$ = this.quizzesStoreService.getSelectedQuizAnswerSubmittingError();
 
-    this.submitAnswer$.pipe(
-        combineLatest(
-          this.quizzesStoreService.getSeed(),
-          (submitAnswer: SubmitAnswerModel, seed: string) =>
+    combineLatest([
+      this.submitAnswer$,
+      this.quizzesStoreService.getSeed()]
+    )
+      .pipe(
+        map(
+          ([submitAnswer, seed]: [SubmitAnswerModel, string]) =>
             Object.assign(submitAnswer, { seed })
-        )
+          )
       )
       .subscribe((submitAnswerPayload: SubmitAnswerPayload) =>
         this.quizzesStoreService.dispatchSubmitAnswerAction(submitAnswerPayload));
@@ -65,29 +68,38 @@ export class QuizComponent implements OnInit {
       )
       .subscribe((error: string) => console.log(error)); // this.snackBar.open(error, 'Too bad!', { duration: snackBarDuration, })
 
-    this.quizzesStoreService.getQuizzesIsLoaded().pipe(
+    const selectedQuizId$: Observable<string> = this.quizzesStoreService.getQuizzesIsLoaded()
+      .pipe(
         filter((quizzesIsLoaded: boolean) => quizzesIsLoaded),
         switchMap(() =>
-          this.quizzesStoreService.getSelectedQuizId().pipe(
-              filter((selectedQuizId: string) => selectedQuizId !== undefined),
-              combineLatest(
-                this.quizzesStoreService.getQuizStatesDict(),
-                (selectedQuizId: string, quizStatesDict: Dictionary<QuizState>) => (selectedQuizId in quizStatesDict)
-              ),
-              filter((quizExists: boolean) => !quizExists)
+          this.quizzesStoreService.getSelectedQuizId()
+            .pipe(
+              filter((selectedQuizId: string) => selectedQuizId !== undefined)
             )
         )
-      )
+      );
+    combineLatest([
+        selectedQuizId$,
+        this.quizzesStoreService.getQuizStatesDict(),
+      ])
+        .pipe(
+          map(([selectedQuizId, quizStatesDict]: [string, Dictionary<QuizState>]) => (selectedQuizId in quizStatesDict)),
+          filter((quizExists: boolean) => !quizExists),
+        )
       .subscribe(() => this.router.navigate(['/quizzes', 'select']));
 
-    this.quizzesStoreService.getQuizzesIsLoaded().pipe(
+    this.quizzesStoreService.getQuizzesIsLoaded()
+      .pipe(
         filter((quizzesIsLoaded: boolean) => quizzesIsLoaded),
         switchMap(() =>
-          this.quiz$.pipe(
-            combineLatest(
-              this.questionIndex$,
-              this.quizzesStoreService.getQuizzesAnswerStateDict(),
-              (quiz: Quiz, questionIndex: number, quizzesAnswerStateDict: Dictionary<number>) => {
+        combineLatest([
+          this.quiz$,
+          this.questionIndex$,
+          this.quizzesStoreService.getQuizzesAnswerStateDict(),
+        ])
+          .pipe(
+            map(
+              ([quiz, questionIndex, quizzesAnswerStateDict]: [Quiz, number, Dictionary<number>]) => {
                 const currentQuestionIndex = quizzesAnswerStateDict[quiz.id];
                 if (questionIndex > currentQuestionIndex) {
                   return {

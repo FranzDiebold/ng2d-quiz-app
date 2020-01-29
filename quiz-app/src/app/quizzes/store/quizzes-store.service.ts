@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 
 import { createFeatureSelector, createSelector, Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { combineLatest, filter, take, map } from 'rxjs/operators';
+import { Observable, combineLatest } from 'rxjs';
+import { filter, take, map } from 'rxjs/operators';
 import { Dictionary } from '@ngrx/entity/src/models';
 
 import { StoreService } from '../../store/app-store.service';
@@ -48,20 +48,29 @@ export class QuizzesStoreService extends StoreService {
 
 
   dispatchLoadQuizzesListActionIfNotLoadedYet(): void {
-    this.getQuizzesIsLoaded().pipe(
-        combineLatest(
-          this.getQuizzesIsLoading(),
-          (quizzesIsLoaded: boolean, quizzesIsLoading: boolean) => {
+    const quizzesNotLoadedYet$: Observable<{ [name: string]: boolean }> = combineLatest([
+      this.getQuizzesIsLoaded(),
+      this.getQuizzesIsLoading()
+    ])
+      .pipe(
+        map(
+          ([quizzesIsLoaded, quizzesIsLoading]: [boolean, boolean]) => {
             return {
               quizzesIsLoaded,
               quizzesIsLoading,
             };
           }
         ),
-        filter((loadingState: {[name: string]: boolean}) => !loadingState.quizzesIsLoaded && !loadingState.quizzesIsLoading),
-        combineLatest(
-          this.getSeed(),
-          (_, seed: string) => seed
+        filter((loadingState: { [name: string]: boolean }) => !loadingState.quizzesIsLoaded && !loadingState.quizzesIsLoading)
+      );
+
+    combineLatest([
+      quizzesNotLoadedYet$,
+      this.getSeed(),
+    ])
+      .pipe(
+        map(
+          ([_, seed]: [any, string]) => seed
         ),
         take(1)
       )
@@ -143,10 +152,13 @@ export class QuizzesStoreService extends StoreService {
   }
 
   private getSelectedQuizState(): Observable<QuizState> {
-    return this.getQuizStatesDict().pipe(
-        combineLatest(
-          this.getSelectedQuizId(),
-          (entities: Dictionary<QuizState>, selectedQuizId: string) => entities[selectedQuizId]
+    return combineLatest([
+      this.getQuizStatesDict(),
+      this.getSelectedQuizId()
+    ])
+      .pipe(
+        map(
+          ([entities, selectedQuizId]: [Dictionary<QuizState>, string]) => entities[selectedQuizId]
         ),
         filter((quizState: QuizState) => quizState !== undefined)
       );
@@ -166,10 +178,13 @@ export class QuizzesStoreService extends StoreService {
   }
 
   getSelectedQuizSelectedQuestion(): Observable<Question> {
-    return this.getSelectedQuizQuestions().pipe(
-        combineLatest(
-          this.getSelectedQuestionIndex(),
-          (questions: Question[], selectedQuestionIndex: number) =>
+    return combineLatest([
+      this.getSelectedQuizQuestions(),
+      this.getSelectedQuestionIndex()
+    ])
+      .pipe(
+        map(
+          ([questions, selectedQuestionIndex]: [Question[], number]) =>
             questions[selectedQuestionIndex]
         )
       );
@@ -195,11 +210,14 @@ export class QuizzesStoreService extends StoreService {
   }
 
   getSelectedQuizAnswerForSelectedQuestion(): Observable<AnswerModel> {
-    return this.getSelectedQuizQuestions().pipe(
-        combineLatest(
-          this.getSelectedQuizAnswersDict(),
-          this.getSelectedQuestionIndex(),
-          (questions: Question[], answers: Dictionary<AnswerModel>, selectedQuestionIndex: number) =>
+    return combineLatest([
+      this.getSelectedQuizQuestions(),
+      this.getSelectedQuizAnswersDict(),
+      this.getSelectedQuestionIndex()
+    ])
+      .pipe(
+        map(
+          ([questions, answers, selectedQuestionIndex]: [Question[], Dictionary<AnswerModel>, number]) =>
             answers[questions[selectedQuestionIndex].id]
         )
       );
@@ -213,10 +231,13 @@ export class QuizzesStoreService extends StoreService {
 
 
   getNumberOfCorrectlyAnsweredQuestions(): Observable<number> {
-    return this.getSelectedQuizQuestions().pipe(
-        combineLatest(
-          this.getSelectedQuizAnswersDict(),
-          (questions: Question[], answers: Dictionary<AnswerModel>) =>
+    return combineLatest([
+      this.getSelectedQuizQuestions(),
+      this.getSelectedQuizAnswersDict()
+    ])
+      .pipe(
+        map(
+          ([questions, answers]: [Question[], Dictionary<AnswerModel>]) =>
             questions
               .map((question: Question) => (answers[question.id] || {})['isCorrect'] || false)
               .filter((isCorrectlyAnswered: boolean) => isCorrectlyAnswered)
