@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiEndpoint: 'https://script.google.com/macros/s/AKfycbzqMQJLt49HZcOgAYItiv2GljX5SfyMs0A5KTSUVwq3idDbweez/exec',
+  apiEndpoint: 'https://script.google.com/macros/s/AKfycbyXa1XgafG65Cmo5amKWSOmgVE_a5xG8wq5qeWE6uipT0risQN_/exec',
   colors: [
     '#540D6E',
     '#EE4266',
