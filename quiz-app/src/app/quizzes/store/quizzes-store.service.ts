@@ -239,7 +239,7 @@ export class QuizzesStoreService extends StoreService {
         map(
           ([questions, answers]: [Question[], Dictionary<AnswerModel>]) =>
             questions
-              .map((question: Question) => (answers[question.id] || {})['isCorrect'] || false)
+              .map((question: Question) => (answers[question.id] || { isCorrect: false }).isCorrect)
               .filter((isCorrectlyAnswered: boolean) => isCorrectlyAnswered)
               .length
         )
