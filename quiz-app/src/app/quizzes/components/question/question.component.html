@@ -50,7 +50,7 @@
           </div>
           <div *ngSwitchCase="'MULTIPLE_CHOICE'">
             <div *ngIf="!answer; else answerExists" formArrayName="answers">
-              <div *ngFor="let shuffledAnswer of answerForm.get('answers').controls; let i = index" class="control answer">
+              <div *ngFor="let shuffledAnswer of answerForm.get('answers')?.controls; let i = index" class="control answer">
                 <input type="checkbox" [formControlName]="i" [id]="question.id + '-' + i" class="is-checkradio">
                 <label [for]="question.id + '-' + i" [ngStyle]="{ 'color': question.color }" class="checkbox">
                   <span>{{ question.shuffledAnswers[i] }}</span>
@@ -60,10 +60,10 @@
             <ng-template #answerExists>
               <div *ngFor="let shuffledAnswer of question.shuffledAnswers; let i = index" class="control answer answered"
                             [ngClass]="{
-                              'answered-correctly': (answer.submittedAnswer.includes(i) && answer.correctAnswer.includes(i)),
-                              'answered-incorrectly': (answer.submittedAnswer.includes(i) && !answer.correctAnswer.includes(i))
+                              'answered-correctly': (asNumberList(answer.submittedAnswer).includes(i) && asNumberList(answer.correctAnswer).includes(i)),
+                              'answered-incorrectly': (asNumberList(answer.submittedAnswer).includes(i) && !asNumberList(answer.correctAnswer).includes(i))
                             }">
-                <input type="checkbox" [id]="question.id + '-' + i" [checked]="answer.correctAnswer.includes(i)" class="is-checkradio" disabled>
+                <input type="checkbox" [id]="question.id + '-' + i" [checked]="asNumberList(answer.correctAnswer).includes(i)" class="is-checkradio" disabled>
                 <label [for]="question.id + '-' + i" class="checkbox">
                   {{ shuffledAnswer }}
                 </label>
@@ -77,7 +77,7 @@
                   [sortablejsOptions]="{ animation: 150 }"
                   class="sort-answers">
                 <div
-                  *ngFor="let shuffledAnswer of answerForm.get('answers').controls"
+                  *ngFor="let shuffledAnswer of answerForm.get('answers')?.controls"
                   class="answer sort-answer sortable">
                   <span class="sort-icon">
                     <svg style="width:24px;height:24px" viewBox="0 0 24 24">

@@ -118,4 +118,7 @@ export class QuestionComponent implements OnChanges {
     this.restartQuiz.emit(this.quiz);
   }
 
+  asNumberList(value: any): number[] {
+    return value as number[];
+  }
 }
