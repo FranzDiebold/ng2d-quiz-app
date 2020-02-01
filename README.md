@@ -18,13 +18,11 @@ ng2d-quiz-app is a **quiz app** made with [Angular](https://github.com/angular/a
 [QuizServer](/quiz-server) - stateless JSON backend
 
 
-
 ## QuizApp
 <img src="/quiz-app/images/readme/quiz-app-1.jpg" width="60%" style="max-width:100%;" alt="QuizApp screenshot 1">
 
 [QuizApp](/quiz-app) - Angular client app
 
 
-
-## :balloon: Quiz Design
-:fast_forward: [Quiz Design](./Design) - Colors and preview image
+## Design
+[Design](./Design) - Colors and preview image
