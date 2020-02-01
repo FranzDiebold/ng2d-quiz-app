@@ -24,7 +24,7 @@ jobs:
         REPOSITORY_NAME: ng2d-quiz-app
     - name: Build and Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
-      env:
+      with:
         ACCESS_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}
         BASE_BRANCH: master
         BRANCH: gh-pages
