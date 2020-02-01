@@ -2,9 +2,9 @@
 
 # QuizApp
 
-[![Angular: v8](https://img.shields.io/badge/Angular-v8-DD0031.svg)](./package.json)
+[![Angular: v8](https://img.shields.io/badge/Angular-v8-DD0031.svg)](./src/package.json)
 <a href="https://franzdiebold.github.io/ng2d-quiz-app/" target="_blank"><img src="https://img.shields.io/badge/demo-online-3BCEAC.svg" alt="demo: online"></a>
-[![license: MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg)](./LICENSE.md)
+[![license: MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg)](./src/LICENSE.md)
 
 > Check out the [live demo](https://franzdiebold.github.io/ng2d-quiz-app/)!
 
@@ -101,7 +101,7 @@ In `quiz-app` folder, build the Angular client app using your GitHub Pages url a
 
 In the root folder `ng2d-quiz-app` run the `angular-cli-ghpages` command with the `--dir` option pointing to the `dist` folder of the `quiz-app`:
 
-`angular-cli-ghpages --dir quiz-app/dist --no-silent`
+`angular-cli-ghpages --dir quiz-app/src/dist --no-silent`
 
 Your Angular client app should now be available at `https://<USERNAME>.github.io/<REPOSITORY_NAME>/`.
 
