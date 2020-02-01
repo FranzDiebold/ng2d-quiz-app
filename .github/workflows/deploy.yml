@@ -29,3 +29,4 @@ jobs:
         BASE_BRANCH: master
         BRANCH: gh-pages
         FOLDER: quiz-app/src/dist/quiz-app
+        CLEAN: true
