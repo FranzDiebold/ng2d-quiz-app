@@ -3,6 +3,7 @@
 # ng2d-quiz-app
 
 <a href="https://franzdiebold.github.io/ng2d-quiz-app/" target="_blank"><img src="https://img.shields.io/badge/demo-online-3BCEAC.svg" alt="demo: online"></a>
+[![Lint, Build and Deploy Status](https://github.com/FranzDiebold/ng2d-quiz-app/workflows/Lint,%20Build%20and%20Deploy/badge.svg)](https://github.com/FranzDiebold/ng2d-quiz-app/actions?query=workflow%3A%22Lint%2C+Build+and+Deploy%22)
 [![license: MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg)](./LICENSE.md)
 
 <img src="/quiz-app/images/readme/quiz-app-2.jpg" width="60%" style="max-width:100%;" alt="QuizApp screenshot 2">
