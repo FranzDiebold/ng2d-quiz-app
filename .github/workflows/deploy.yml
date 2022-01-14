@@ -3,30 +3,29 @@ name: Lint, Build and Deploy
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
-
     runs-on: ubuntu-18.04
     steps:
-    - uses: actions/checkout@v2
-      with:
-        persist-credentials: false
-    - uses: actions/setup-node@v1
-      with:
-        node-version: '12.x'
-    - run: make prepare
-    - run: make lint
-    - run: make build-gh-pages
-      env:
-        USERNAME: franzdiebold
-        REPOSITORY_NAME: ng2d-quiz-app
-    - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@releases/v3
-      with:
-        ACCESS_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}
-        BASE_BRANCH: master
-        BRANCH: gh-pages
-        FOLDER: quiz-app/src/dist/quiz-app
-        CLEAN: true
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+      - name: Prepare
+        run: make prepare
+      - name: Lint
+        run: make lint
+      - name: Build
+        run: make build-gh-pages
+        env:
+          USERNAME: franzdiebold
+          REPOSITORY_NAME: ng2d-quiz-app
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.2.2
+        with:
+          branch: gh-pages
+          folder: quiz-app/src/dist/quiz-app
